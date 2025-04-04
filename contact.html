@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="mailto:youremail@example.com"><i class='bx bx-envelope'></i></a>
+        </div>
+        <div class="map-container">
+            <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212270.6634170682!2d72.805475925!3d33.616355299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd07891722f%3A0x6059515c3bdb02b6!2sIslamabad%2C%20Pakistan!5e0!3m2!1sen!2sus!4v1697821234567!5m2!1sen!2sus" 
+    width="80%" 
+    height="300" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy">
+</iframe>
+        </div>
+        <div class="contact-cards">
+            <div class="contact-card">
+                <i class='bx bx-envelope'></i>
+                <h3>Email</h3>
+                <p>youremail@example.com</p>
+            </div>
+            <div class="contact-card">
+                <i class='bx bx-phone'></i>
+                <h3>Phone</h3>
+                <p>+123 456 7890</p>
+            </div>
+            <div class="contact-card">
+                <i class='bx bx-map'></i>
+                <h3>Address</h3>
+                <p>123 Main St, City, Country</p>
+            </div>
+        </div>
+        
+
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+/* Work Section */
+.work {
+    background: var(--second-bg-color);
+    padding: 10rem 9% 2rem;
+    min-height: 140vh;
+    text-align: center;
+}
+
+.heading {
+    font-size: 4.5rem;
+    color: var(--text-color);
+    margin-bottom: 5rem;
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+/* Filters */
+.filters {
+    margin-bottom: 4rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 2rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+/* Work Grid */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.work-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.work-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.work-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.work-item:hover img {
+    transform: scale(1.1);
+}
+
+.work-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.work-item:hover .work-overlay {
+    opacity: 1;
+}
+
+.work-overlay h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.work-overlay p {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.skills-used {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.skill-icon {
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 600px;
+    text-align: center;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .work-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 1.4rem;
+    }
+}
+
+/* Notification Bar */
+.notification-bar {
+    position: fixed;
+    bottom: -100px; /* Start off-screen */
+    left: 0;
+    width: 100%;
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    animation: slideUp 0.5s ease forwards;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.notification-bar a {
+    color: var(--bg-color);
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.notification-bar a:hover {
+    color: var(--accent-color);
+}
+
+.close-notification {
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.close-notification:hover {
+    color: var(--accent-color);
+}
+
+/* Progress Bar */
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    animation: progress 5s linear forwards;
+}
+
+/* Animations */
+@keyframes slideUp {
+    to {
+        bottom: 0;
+    }
+}
+
+@keyframes progress {
+    to {
+        width: 0;
+    }
+}
+

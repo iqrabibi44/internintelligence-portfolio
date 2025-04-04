@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css"> <!-- Link to Global CSS -->
+    <link rel="stylesheet" href="skills.css"> <!-- Link to Local CSS -->
+    <title>Education & Skills</title>
+</head>
+<body>
+    <!-- Education & Skills Section -->
+    <section class="education-skills" id="education-skills">
+        <div class="container">
+            <!-- Left Section (Education) -->
+            <div class="left-section">
+                <h1>My <span>Education</span></h1>
+                <p>Dedicated to continuous learning and academic excellence. Focused on expanding knowledge and skills in software engineering.</p>
+                <ul class="education-list">
+                    <li class="education-item">
+                        <span class="year">2022–2026</span>
+                        <div>
+                            <span class="degree">BS</span>
+                            <br>
+                            <span class="institution">NUML Isb</span>
+                        </div>
+                    </li>
+                    <li class="education-item">
+                        <span class="year">2019–2021</span>
+                        <div>
+                            <span class="degree">ICS</span>
+                            <br>
+                            <span class="institution">Superior College</span>
+                        </div>
+                    </li>
+                    <li class="education-item">
+                        <span class="year">2017–2019</span>
+                        <div>
+                            <span class="degree">SSC</span>
+                            <br>
+                            <span class="institution">The Hok School</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Section (Skills) -->
+            <div class="right-section">
+                <h2>Design Skills</h2>
+                <div class="skill">
+                    <div class="skill-name">HTML</div>
+                    <div class="skill-bar web-design" data-percent="90">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">CSS</div>
+                    <div class="skill-bar graphic-design" data-percent="85">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">JS</div>
+                    <div class="skill-bar ux" data-percent="80">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">PHP</div>
+                    <div class="skill-bar copy-writing" data-percent="75">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+
+                <h2>Development Skills</h2>
+                <div class="skill">
+                    <div class="skill-name">UI/UX Design</div>
+                    <div class="skill-bar html-css" data-percent="95">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">Backend</div>
+                    <div class="skill-bar javascript" data-percent="70">
+                        <div class="skill-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for Skill Bar Animation -->
+    <script>
+        // Function to animate skill bars
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-bar');
+
+            skillBars.forEach(skillBar => {
+                const progress = skillBar.querySelector('.skill-progress');
+                const percent = skillBar.getAttribute('data-percent');
+
+                progress.style.width = `${percent}%`;
+            });
+        }
+
+        // Intersection Observer to trigger animation
+        const skillsSection = document.getElementById('education-skills');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(skillsSection); 
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+        observer.observe(skillsSection);
+    </script>
+</body>
+</html>

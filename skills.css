@@ -1,0 +1,143 @@
+/* Education & Skills Section */
+.education-skills {
+    background: var(--second-bg-color);
+    padding: 10rem 9% 2rem;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+}
+
+.left-section, .right-section {
+    flex: 1;
+    min-width: 300px;
+    max-width: 50%;
+}
+
+.left-section h1 {
+    font-size: 4.5rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.left-section h1 span {
+    color: var(--main-color);
+}
+
+.left-section p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+}
+
+.education-list {
+    list-style: none;
+    padding: 0;
+}
+
+.education-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--bg-color);
+}
+
+.education-item:last-child {
+    border-bottom: none;
+}
+
+.education-item .year {
+    font-size: 1.6rem;
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.education-item .degree {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.education-item .institution {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.right-section h2 {
+    font-size: 2.4rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+}
+
+.skill {
+    margin-bottom: 2rem;
+}
+
+.skill-name {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 1rem;
+    background: var(--bg-color);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--main-color);
+    border-radius: 1rem;
+    width: 0; /* Start with 0 width */
+    transition: width 3s ease; /* Smooth animation */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-section, .right-section {
+        max-width: 100%;
+    }
+
+    .left-section h1 {
+        font-size: 3.6rem;
+    }
+
+    .left-section p {
+        font-size: 1.4rem;
+    }
+
+    .education-item .year {
+        font-size: 1.4rem;
+    }
+
+    .education-item .degree {
+        font-size: 1.6rem;
+    }
+
+    .education-item .institution {
+        font-size: 1.2rem;
+    }
+
+    .right-section h2 {
+        font-size: 2rem;
+    }
+
+    .skill-name {
+        font-size: 1.4rem;
+    }
+}
