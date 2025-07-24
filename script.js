@@ -51,7 +51,7 @@ const typed=new Typed('.multiple-text',{
 const form = document.getElementById('contact-form');
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault(); // Prevent form submission
+    e.preventDefault(); 
 
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -67,9 +67,9 @@ form.addEventListener('submit', (e) => {
         return;
     }
 
-    // If validation passes, show success message
+    
     alert('Message sent successfully!');
-    form.reset(); // Clear the form
+    form.reset(); 
 });
 
 function validateEmail(email) {
@@ -104,7 +104,7 @@ closeNotification.addEventListener('click', () => {
     }, 500); // Match the animation duration
 });
 
-// Close notification after 5 seconds
+
 setTimeout(() => {
     notificationBar.style.animation = 'slideDown 0.5s ease forwards';
     setTimeout(() => {
@@ -112,7 +112,7 @@ setTimeout(() => {
     }, 500); // Match the animation duration
 }, 5000); // 5 seconds
 
-// Add slideDown animation to CSS
+
 const style = document.createElement('style');
 style.innerHTML = `
     @keyframes slideDown {
