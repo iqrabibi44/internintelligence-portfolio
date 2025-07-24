@@ -1,4 +1,4 @@
-/* Profile Section */
+
 .profile {
     background: var(--bg-color);
     padding: 10rem 9% 2rem;
@@ -55,7 +55,7 @@ h1 {
     color: var(--main-color);
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
